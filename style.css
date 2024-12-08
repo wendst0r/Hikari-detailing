@@ -1,0 +1,350 @@
+:root{
+    --background-color: #131313;
+    --accent-color: #9843FF;
+}
+body{
+    width: 100%;
+    margin: 0;
+    background: var(--background-color);
+    overflow-x: hidden;
+    font-family: "Tektur";
+}
+
+body::-webkit-scrollbar {
+    width: 15px; /* Ширина всего элемента навигации */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--background-color); /* Цвет дорожки */
+    border: 1px solid #25193a;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #25193a, #2a1e3a); /* Цвет бегунка */
+    border-radius: 5px; /* Округление бегунка */
+    border: 3px solid linear-gradient(45deg, #25193a, #2a1e3a); /* Оформление границ бегунка */
+  }
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+#logo{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 87px;
+width: 348px;
+margin-left: 120px;
+margin-right: 120px;
+}
+
+#header_button{
+    border: solid, 1px, var(--accent-color);
+    border-radius: 23px;
+    width: 136px;
+    height: 51px;
+    margin-right: 120px;
+    color: var(--accent-color);
+    background: none;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+#header_button:hover{
+    color: white;
+    background: var(--accent-color);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color);
+    opacity: 95%;
+    width: 100%;
+    height: 87px;
+    position: fixed;   
+    z-index: 100;
+}
+.header_item{
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    color: white;
+    font-family: "Tektur";
+    font-size: 20px;
+}
+
+a {
+    position: relative;
+    font-family: "Tektur";
+	color: var(--accent-color); /*задаём цвет ссылки*/
+	cursor: pointer;
+	line-height: 1; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+
+}
+a:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 2px; /*задаём ширину линии*/
+	background-color: var(--accent-color); /*задаём цвет линии*/
+	content: "";
+	transition: width 0.2s ease-out; /*задаём время анимации*/
+}
+
+a:hover:after,
+a:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.banner_content{
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    justify-content: flex-end;
+    
+}
+.banner_content_item{
+    height: fit-content;
+    width: fit-content;
+    margin: 0px;
+    margin-left: 5%;
+}
+
+.banner{
+    overflow: hidden;
+    width: 100%;
+    max-height: 100vh;
+}
+
+.banner_gradient{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(19,19,19,0) 100%);
+}
+.video{
+    width: 100%; 
+    z-index: 1;
+}
+
+.arrow{
+    position: absolute;
+    z-index: 12;
+    left: 48.5vw;
+    top: 90vh;
+    width: 3vw; 
+    height: 3vw;
+}
+
+.location_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+    background: var(--background-color);
+    opacity: 90%;
+    border-radius: 23px;
+    padding: 10px;
+    z-index: 11;
+    margin-bottom: 100px;
+    margin-left: 5%;
+}
+
+.button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    z-index: 11;
+    margin-top: 70px;
+}
+.banner_button{
+    font-size: 32px;
+    border: solid, 1px, white;
+    border-radius: 23px;
+    width: 250px;
+    height: max-content;
+    padding: 20px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    color: white;
+    background: none;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+.banner_button:hover{
+    border: solid, 1px, var(--accent-color);
+    background: var(--accent-color);
+    color: white;
+}
+.block{
+    height: fit-content;
+    width: 100%;
+    margin: 0px;
+    margin-top: 3vw;
+}
+
+.heading_container{
+    font-size: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    z-index: 11;            
+}
+
+.heading_gradient{
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    background: linear-gradient(90deg,rgba(19,19,19,1) 0%, rgba(19,19,19,0.7) 50%, rgba(19,19,19,1) 100%);
+}
+h1{
+    flex-grow: 1;
+    text-align: center;
+    font-family: "Tektur";
+    color: white;
+    height: fit-content;
+    width: fit-content;
+    
+}
+.heading_text{
+    color: var(--background-color);
+    text-shadow: 
+    -1px -1px 0 white, /* Верхняя левая тень */
+    1px -1px 0 white,  /* Верхняя правая тень */
+    -1px 1px 0 white,  /* Нижняя левая тень */
+    1px 1px 0 white;   /* Нижняя правая тень */
+}
+
+.services_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: fit-content;
+    z-index: 11;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.service_card{
+    position: relative;
+    height: 12vw;
+    width: 20vw;
+    background-color: #1e1e1e;
+    border-radius: 1.5vw;
+    margin: 0.6vw;
+    overflow: hidden;
+}
+
+.service_title{
+    position: absolute;
+    width: 50%;
+    margin: 1.5vw;
+    text-align: left;
+    font-size: 1.5vw;
+    z-index: 12;
+    color: white;
+}
+
+.service_image{
+    position: absolute;
+    height: 100%;
+    right: 0%;
+    bottom: 0%;
+}
+.service_gradient{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background: linear-gradient(90deg,rgba(30,30,30,1) 0%, rgba(30,30,30,1) 50%, rgba(30,30,30,0) 100%);
+}
+
+.service_button{
+    position: absolute;
+    top: 66%;
+    left: 1.5vw;
+    font-size: 1.2vw;
+    z-index: 11;
+    border: solid, 1px, var(--accent-color);
+    border-radius: 1vw;
+    padding: 0.7vw;
+    color: white;
+    background: none;
+    transition: color 0.3s ease-out;
+    cursor: pointer;
+}
+.service_button:hover{
+    border: solid, 1px, var(--accent-color);
+    background: var(--accent-color);
+    color: white;
+}
+.advantages_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: fit-content;
+    z-index: 11;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+.advantages_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 6vw;
+    width: 25vw;
+    border: white solid 1px;
+    border-radius: 1.5vw;
+    margin: 0.8vw;
+    overflow: hidden;
+}
+
+.advantages_card img{
+    width: 3vw;
+    margin: 1.5vw;
+}
+.advantages_card p{
+    width: 17.5vw;
+    color: white;
+    font-size: 1vw;
+    text-align: left;
+}
+
+.map{
+    position: relative;
+    left: 27.5vw;
+    width: 45vw;
+}
+
+@font-face {
+    font-family: "Tektur";
+    src: url("../Fonts/Tektur-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url("../Fonts/MuseoModerno-VariableFont_wght.ttf");
+}
