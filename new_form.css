@@ -1,0 +1,187 @@
+main{
+    background: linear-gradient(45deg, #25193a, #2a1e3a);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main form{
+    width: 30vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vw;
+    background: var(--background-color);
+    padding: 3vw;
+    border-radius: 2vw;
+    color: white;
+}
+
+main form img{
+    width: 5vw;
+}
+
+main form h1{
+    font-size: 2vw;
+    text-align: center;
+}
+
+main form p, a{
+    font-size: 0.7vw;
+}
+
+main form p{
+    color: grey;
+    font-size: 0.7vw;
+}
+
+main form select, input{
+    margin-bottom: 0.8vw;
+    width: 18vw;
+    height: 2vw;
+    background: var(--background-color);
+    color: white;
+    font-size: 0.7vw;
+    border: var(--accent-color) 0.05vw solid;
+    border-radius: 0.7vw;
+    padding-left: 1vw;
+    box-sizing: border-box;
+}
+main form select, input:last-of-type{
+    margin-bottom: 1.2vw;
+}
+
+main form button{
+    border: solid, 0.05vw, white;
+    border-radius: 2vw;
+    width: 6vw;
+    height: 2vw;
+    color: white;
+    font-size: 0.7vw;
+    background: none;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+main form button:hover{
+    color: white;
+    background: var(--accent-color);
+    border: solid, 0.05vw, var(--accent-color);
+}
+
+.car_select{
+    width: fit-content;
+    height: 8vw;
+    display: grid;
+    grid-template-columns: 2fr 18fr 2fr;
+    gap: 1vw;
+    justify-items: center;
+    align-items: center;
+}
+.car_select img{
+    width: 1vw;
+    cursor: pointer;
+}
+
+.car_item_frame{
+    width: 18vw;
+    height: 5vw;
+    border: solid, 0.05vw, var(--accent-color);
+    border-radius: 0.7vw;
+    overflow: hidden;
+}
+.car{
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.car p{
+    color: white;
+    margin:1%;
+    width: 100%;
+    text-align: center;
+}
+
+#add_car_item{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+#add_car_item:hover{
+    color:white;
+    background: #25193a;
+
+}
+
+#add_car_item img{
+    width: 1vw;
+}
+
+#add_car_item p{
+    width: 100%;
+    padding: 2%;
+    font-size: 1vw;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.car, .add_car_item {
+    display: none; /* По умолчанию все блоки скрыты */
+}
+.car.active, .add_car_item.active {
+    display: block; /* Показываем активный блок */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1vw;
+    background: var(--background-color);
+    color: white;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid var(--accent-color);
+    padding: 0.5vw;
+    text-align: center;
+    font-size: 0.7vw;
+}
+
+th {
+    background: var(--accent-color);
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background: #2a1e3a;
+}
+
+input[type="checkbox"] {
+    width: 1vw;
+    height: 1vw;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    width: 0.6vw;
+    height: 0.6vw;
+    cursor: pointer;
+}
+
+.total-cost {
+    margin-top: 1vw;
+    font-size: 0.9vw;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}

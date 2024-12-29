@@ -1,0 +1,27 @@
+services:
+  php:
+    restart: always
+    build: .
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/var/www/html/public:ro
+    networks:
+      - general
+  db:
+    restart: always
+    image: postgres:13-alpine
+    ports:
+      - 5440:5432
+    environment:
+      - POSTGRES_USER=${DB_USER:-admin}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-qwerty}
+      - POSTGRES_DB=${DB_NAME:-bot}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    networks:
+      - general
+networks:
+  general:
+    driver: bridge

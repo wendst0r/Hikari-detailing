@@ -1,0 +1,71 @@
+main{
+    background: linear-gradient(45deg, #25193a, #2a1e3a);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main form{
+    width: 20vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vw;
+    background: var(--background-color);
+    padding: 3vw;
+    border-radius: 2vw;
+    color: white;
+}
+
+main form img{
+    width: 5vw;
+}
+
+main form h1{
+    font-size: 2vw;
+}
+
+main form p, a{
+    font-size: 0.7vw;
+}
+
+main form p{
+    color: grey;
+    font-size: 0.7vw;
+}
+
+main form input{
+    margin-bottom: 0.8vw;
+    width: 80%;
+    height: 2vw;
+    background: none;
+    color: white;
+    font-size: 0.7vw;
+    border: var(--accent-color) 0.05vw solid;
+    border-radius: 0.7vw;
+    padding-left: 1vw;
+}
+main form input:last-of-type{
+    margin-bottom: 1.2vw;
+}
+
+main form button{
+    border: solid, 0.05vw, white;
+    border-radius: 2vw;
+    width: 6vw;
+    height: 2vw;
+    color: white;
+    font-size: 0.7vw;
+    background: none;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+}
+main form button:hover{
+    color: white;
+    background: var(--accent-color);
+    border: solid, 0.05vw, var(--accent-color);
+}

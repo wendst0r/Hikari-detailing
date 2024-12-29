@@ -1,30 +1,12 @@
-:root{
-    --background-color: #131313;
-    --accent-color: #9843FF;
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;     
+    height: 5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
-body{
-    width: 100%;
-    margin: 0;
-    background: var(--background-color);
-    overflow-x: hidden;
-    font-family: "Tektur";
-}
-
-body::-webkit-scrollbar {
-    width: 15px; /* Ширина всего элемента навигации */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: var(--background-color); /* Цвет дорожки */
-    border: 1px solid #25193a;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #25193a, #2a1e3a); /* Цвет бегунка */
-    border-radius: 5px; /* Округление бегунка */
-    border: 3px solid linear-gradient(45deg, #25193a, #2a1e3a); /* Оформление границ бегунка */
-  }
-
 main{
     display: flex;
     flex-direction: column;
@@ -32,22 +14,15 @@ main{
     justify-content: flex-start;
 }
 
-#logo{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 87px;
-width: 348px;
-margin-left: 120px;
-margin-right: 120px;
-}
 
 #header_button{
     border: solid, 1px, var(--accent-color);
-    border-radius: 23px;
-    width: 136px;
-    height: 51px;
-    margin-right: 120px;
+    border-radius: 2vw;
+    width: fit-content;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    height: 2vw;
+    margin-right: 6vw;
     color: var(--accent-color);
     background: none;
     transition: color 0.2s ease-out;
@@ -64,7 +39,7 @@ header{
     background-color: var(--background-color);
     opacity: 95%;
     width: 100%;
-    height: 87px;
+    height: 5vw;
     position: fixed;   
     z-index: 100;
 }
@@ -74,32 +49,7 @@ header{
     margin: auto;
     color: white;
     font-family: "Tektur";
-    font-size: 20px;
-}
-
-a {
-    position: relative;
-    font-family: "Tektur";
-	color: var(--accent-color); /*задаём цвет ссылки*/
-	cursor: pointer;
-	line-height: 1; /*задаём высоту строки*/
-	text-decoration: none; /*убираем подчёркивание*/
-
-}
-a:after {
-	display: block;
-	position: absolute;
-	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
-	width: 0;/*задаём длинну линии до наведения курсора*/
-	height: 2px; /*задаём ширину линии*/
-	background-color: var(--accent-color); /*задаём цвет линии*/
-	content: "";
-	transition: width 0.2s ease-out; /*задаём время анимации*/
-}
-
-a:hover:after,
-a:focus:after {
-	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+    font-size: 1.2vw;
 }
 
 .banner_content{
@@ -110,7 +60,8 @@ a:focus:after {
     display: flex;
     flex-direction: column;
     align-content: left;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin-top: 7.7vw;
     
 }
 .banner_content_item{
@@ -123,15 +74,15 @@ a:focus:after {
 .banner{
     overflow: hidden;
     width: 100%;
-    max-height: 100vh;
+    height: 50vw;
 }
 
 .banner_gradient{
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 51vw;
     z-index: 10;
-    background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(19,19,19,0) 100%);
+    background: linear-gradient(0deg, rgba(19,19,19,1) 10%, rgba(19,19,19,0) 100%);
 }
 .video{
     width: 100%; 
@@ -142,7 +93,7 @@ a:focus:after {
     position: absolute;
     z-index: 12;
     left: 48.5vw;
-    top: 90vh;
+    top: 45vw;
     width: 3vw; 
     height: 3vw;
 }
@@ -155,11 +106,12 @@ a:focus:after {
     height: max-content;
     background: var(--background-color);
     opacity: 90%;
-    border-radius: 23px;
-    padding: 10px;
+    border-radius: 1vw;
+    padding: 0.7vw;
     z-index: 11;
-    margin-bottom: 100px;
+    margin-bottom: 4.2vw;
     margin-left: 5%;
+    font-size: 1vw;
 }
 
 .button_container{
@@ -169,15 +121,15 @@ a:focus:after {
     width: 100%;
     height: max-content;
     z-index: 11;
-    margin-top: 70px;
+    margin-top: 3.2vw;
 }
 .banner_button{
-    font-size: 32px;
+    font-size: 1.6vw;
     border: solid, 1px, white;
-    border-radius: 23px;
-    width: 250px;
+    border-radius: 1vw;
+    width: 12.2vw;
     height: max-content;
-    padding: 20px;
+    padding: 0.7vw;
     margin-left: 2vw;
     margin-right: 2vw;
     color: white;
@@ -337,14 +289,18 @@ h1{
     position: relative;
     left: 27.5vw;
     width: 45vw;
+    margin-bottom: 2vw;
 }
-
-@font-face {
-    font-family: "Tektur";
-    src: url("../Fonts/Tektur-VariableFont_wdth,wght.ttf");
+footer{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    text-align: center;
+    align-items: center;
+    color: #4e4e4e;
 }
-
-@font-face {
-    font-family: "MuseoModerno";
-    src: url("../Fonts/MuseoModerno-VariableFont_wght.ttf");
+footer a{
+    width: fit-content;
 }

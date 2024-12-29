@@ -1,0 +1,114 @@
+body {
+    font-family: 'Tektur', cursive;
+    background: linear-gradient(156.04deg, #271B3A 30%, #131313 70.96%); /* Градиент от фиолетового к черному */
+    color: #FFFFFF; /* Основной цвет текста */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Фон занимает всю высоту экрана */
+}
+.sidebar {
+    width: 20%;
+    padding: 10px;
+    background:rgba(30, 30, 30, 0); /* Цвет фона боковой панели */
+    text-align: center;
+}
+.content {
+    width: 80%;
+    padding: 10px;
+    
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.button {
+    display: block;
+    width: 75%;
+    padding: 12px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+    background: #1E1E1E; /* Цвет фона кнопки */
+    color: #FFFFFF; /* Цвет текста кнопки */
+    border: none;
+    border-radius: 23px; /* Закругленные углы */
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.button:hover {
+    background:rgb(121, 22, 134); /* Цвет фона кнопки при наведении */
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+table, td {         
+     
+}
+td, .smallpurple {
+    padding: 8px;
+    width: 50%;
+    text-align: center;
+}
+th {
+
+}
+td {
+    background-color: #1E1E1E; /* Цвет фона ячеек таблицы */
+    color: #FFFFFF; /* Цвет текста ячеек таблицы */
+    margin: auto;
+}
+h2 {
+    color: #FFFFFF; /* Цвет заголовков */
+}
+p {
+    color: #FFFFFF; /* Цвет текста */
+}
+.bigblack {
+    background: #1E1E1E;
+    border: none;
+    border-radius: 23px;
+    padding: 20px;
+}
+.smallpurple {
+    background-color:#271B3A; /* Цвет фона заголовков таблицы */
+    color: #fff; /* Цвет текста заголовков таблицы */
+    width: 85%;
+    margin: auto;
+}
+.service-block {
+    margin-top: 1px;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color:rgb(54, 54, 54);
+}
+
+h4 {
+    margin-top: 1px;
+}
+
+/* Стиль для выпадающего списка */
+.dropdown-content {
+    
+    position: absolute;
+    background-color: #464646;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content .master-option {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-content .master-option:hover {
+    background-color: #919191;
+}

@@ -1,0 +1,62 @@
+:root{
+    --background-color: #131313;
+    --accent-color: #9843FF;
+}
+
+@font-face {
+    font-family: "Tektur";
+    src: url("../Fonts/Tektur-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+    font-family: "MuseoModerno";
+    src: url("../Fonts/MuseoModerno-VariableFont_wght.ttf");
+}
+
+body
+{
+    width: 100%;
+    margin: 0;
+    background: var(--background-color);
+    overflow-x: hidden;
+    font-family: "Tektur";
+}
+
+body::-webkit-scrollbar {
+    width: 15px; /* Ширина всего элемента навигации */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--background-color); /* Цвет дорожки */
+    border: 1px solid #25193a;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #25193a, #2a1e3a); /* Цвет бегунка */
+    border-radius: 5px; /* Округление бегунка */
+    border: 3px solid linear-gradient(45deg, #25193a, #2a1e3a); /* Оформление границ бегунка */
+  }
+
+a{
+  position: relative;
+  font-family: "Tektur";
+color: var(--accent-color); /*задаём цвет ссылки*/
+cursor: pointer;
+line-height: 1; /*задаём высоту строки*/
+text-decoration: none; /*убираем подчёркивание*/
+}
+a:after{
+display: block;
+position: absolute;
+left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+width: 0;/*задаём длинну линии до наведения курсора*/
+height: 0.05vw; /*задаём ширину линии*/
+background-color: var(--accent-color); /*задаём цвет линии*/
+content: "";
+transition: width 0.2s ease-out; /*задаём время анимации*/
+}
+
+a:hover:after,
+a:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
