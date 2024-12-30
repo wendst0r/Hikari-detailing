@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "Клиент" (
-    "Электронная_почта" VARCHAR(100) NOT NULL PRIMARY KEY CHECK ("Электронная_почта" LIKE '%@%')
+    "Электронная_почта" VARCHAR(100) NOT NULL PRIMARY KEY CHECK ("Электронная_почта" LIKE '%@%'),
     "Фамилия_клиента" VARCHAR(50) NOT NULL,
     "Имя_клиента" VARCHAR(50) NOT NULL,
     "Отчество_клиента" VARCHAR(50) NULL DEFAULT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS "Автомобиль" (
     "Модель_автомобиля" VARCHAR(50) NOT NULL,
     "Марка_автомобиля" VARCHAR(50) NOT NULL,
     "Год_выпуска" INTEGER NOT NULL CHECK ("Год_выпуска" BETWEEN 1900 AND EXTRACT(YEAR FROM CURRENT_DATE)),
-    "Регистрационный_номер" VARCHAR(9) NULL DEFAULT NULL UNIQUE CHECK (LENGTH("Регистрационный_номер") = 9)
+    "Регистрационный_номер" VARCHAR(9) NULL DEFAULT NULL UNIQUE CHECK (LENGTH("Регистрационный_номер") = 9 OR LENGTH("Регистрационный_номер") = 8)
 );
 
 CREATE TABLE IF NOT EXISTS "Автомобиль_клиента" (
@@ -122,3 +122,29 @@ CREATE TABLE IF NOT EXISTS "Работа_мастера" (
     FOREIGN KEY ("Табельный_номер_мастера") REFERENCES "Мастер" ("Табельный_номер_мастера") ON UPDATE NO ACTION ON DELETE NO ACTION,
     FOREIGN KEY ("Название_процедуры") REFERENCES "Процедура" ("Название_процедуры") ON UPDATE NO ACTION ON DELETE NO ACTION
 );
+
+CREATE OR REPLACE FUNCTION check_master_qualification()
+RETURNS TRIGGER AS '
+BEGIN
+    -- Проверяем, существует ли запись в таблице Квалификация, связывающая мастера и процедуру
+    IF NOT EXISTS (
+        SELECT 1
+        FROM Квалификация
+        WHERE Табельный_номер_мастера = NEW.Табельный_номер_мастера
+          AND Название_процедуры = NEW.Название_процедуры
+    ) THEN
+        -- Если запись не найдена, выбрасываем ошибку
+        RAISE EXCEPTION ''Мастер с Табельным номером % не обладает квалификацией для процедуры %'', NEW.Табельный_номер_мастера, NEW.Название_процедуры;
+    END IF;
+
+    -- Если проверка пройдена, разрешаем вставку записи
+    RETURN NEW;
+END;
+' LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_check_master_qualification
+BEFORE INSERT ON "Работа_мастера"
+FOR EACH ROW
+EXECUTE FUNCTION check_master_qualification();
+
+CREATE INDEX idx_заказ_datatime_создания_заказа ON "Заказ" ("datatime_создания_заказа");
