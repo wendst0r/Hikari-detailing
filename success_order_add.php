@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="globals.css">
 </head>
 <body>
-    <main>
+    <main style="height: 100vh">
         <form action="home_page.php" method="">
             <img src="Pictures/order-icon.png">
             <h1>Ваш заказ успешно оформлен!</h1>

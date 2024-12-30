@@ -124,10 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_car'])) {
             <button id="exit_button" class="header_button">Выйти</button>
         </div>
         <div class="top_menu_container">
-            <button id="new_order_button">
-                Оформить заказ
-                <img src="./Pictures/+.png">
-            </button>
+            <button id="new_order_button">Оформить заказ</button>
+            <button>Оставить рекламацию</button>
             <button>История заказов</button>
             <button id="new_car_button">Добавить автомобиль</button>
         </div>
@@ -178,8 +176,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_car'])) {
                 <?php if (!empty($cars)): ?>
                     <?php foreach ($cars as $car): ?>
                         <div class="car_card">
-                            <p><?php echo htmlspecialchars($car['Марка_автомобиля']) . " " . htmlspecialchars($car['Модель_автомобиля']) . " (" . htmlspecialchars($car['Год_выпуска']) . ")"; ?></p>
-                            <p>Регистрационный номер: <?php echo htmlspecialchars($car['Регистрационный_номер']); ?></p>
+                            <p><b><?php echo htmlspecialchars($car['Марка_автомобиля']) . " " . htmlspecialchars($car['Модель_автомобиля']) . " (" . htmlspecialchars($car['Год_выпуска']) . ")"; ?></b></p>
+                            <p>Регистрационный номер: <b><?php echo htmlspecialchars($car['Регистрационный_номер']); ?></b></p>
                             <form method="post" style="display: inline;" onsubmit="return confirmDelete()">
                                 <input type="hidden" name="vin_number" value="<?php echo htmlspecialchars($car['VIN_номер']); ?>">
                                 <button type="submit" name="delete_car" class="delete_button">Удалить</button>

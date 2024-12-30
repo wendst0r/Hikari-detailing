@@ -37,7 +37,7 @@ main {
 
 .top_menu_container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1vw;
     padding-left: 2vw;
     padding-right: 2vw;
@@ -64,11 +64,6 @@ main {
     background: var(--accent-color);
 }
 
-.top_menu_container button img {
-    width: 1.5vw;
-    height: auto;
-}
-
 .main_container {
     width: 100%;
     height: fit-content;
@@ -79,7 +74,7 @@ main {
 }
 
 .current_orders {
-    margin: 2vw;
+    margin: 1vw 2vw 1vw 2vw;
     width: 96%;
     height: 50vw;
     border-radius: 1.5vw;
@@ -106,7 +101,7 @@ main {
 
 .order_title {
     width: 96%;
-    padding: 2% 2% 0% 2%;
+    padding: 0% 2% 0% 2%;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -116,6 +111,7 @@ main {
 
 .order_title p {
     width: fit-content;
+    margin-bottom: 0%;
     font-size: 1.5vw;
 }
 
@@ -181,7 +177,7 @@ td {
     flex-direction: column;
     background: #131313;
     padding: 1vw;
-    border-radius: 8px;
+    border-radius: 1.3vw;
     width: calc((100% - 2 * 1vw) / 3);
     box-sizing: border-box;
 }
@@ -196,7 +192,7 @@ td {
     color: white;
     border: none;
     padding: 0.5vw 1vw;
-    border-radius: 4px;
+    border-radius: 1.3vw;
     cursor: pointer;
 }
 
